@@ -23,8 +23,8 @@ public class Test extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String message = "Au revoir !";
-		request.setAttribute("variable", message);
+		
+		request.setAttribute("heure", "soir");
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 	}
