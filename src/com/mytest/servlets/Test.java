@@ -18,11 +18,17 @@ public class Test extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       String [] titres = {"Des yeux de soie" , " Un peu de soleil dans l'eau froide", " Un certain sourire"};
-       request.setAttribute("titres", titres);
-        
-        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
+      
+    this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }
 
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nom = request.getParameter("nom");
+        
+        request.setAttribute("nom", nom);
+        
+        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
+    }
+    
 }
